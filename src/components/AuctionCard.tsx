@@ -6,7 +6,7 @@ import { toTokens, toUnits } from 'thirdweb'
 
 function AuctionCard({auction,auctionId}:{auction:any,auctionId:number}) {
   return (
-   <div className=' flex flex-row gap-5 border border-primary rounded-lg shadow-xl shadow-primary max-w-[500px] overflow-hidden'>
+   <div className=' flex flex-row gap-5 bg-primary-300  rounded-lg  max-w-[500px] overflow-hidden'>
     <div>
       <Image src={auction[2]} className=' w-full rounded-none  h-full'
       classNames={{
@@ -14,9 +14,9 @@ function AuctionCard({auction,auctionId}:{auction:any,auctionId:number}) {
       }}
       />
     </div>
-    <div className='flex flex-col gap-2 text-secondary max-w-[250px] p-4 '>
+    <div className='flex flex-col gap-2 text-primary-50 max-w-[250px] p-4 '>
         <h1 className=' text-primary text-xl font-bold'>{auction[0]}</h1>
-        <p className=' text-secondary w-full max-h-[70px] overflow-scroll'>{auction[1]}</p>
+        <p className=' text-primary-50 w-full max-h-[70px] overflow-scroll'>{auction[1]}</p>
         <div className='flex flex-col gap-2'>
         <h2 className=' text-primary font-bold'>Seller</h2>
         <Snippet codeString={auction[3]} color='primary'>{String(auction[3])?.slice(0,10)+'...'+String(auction[3])?.slice(39)}</Snippet>

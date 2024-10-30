@@ -60,13 +60,11 @@ function CreateListingPage() {
             method:'approve',
             params:[biddersContractAddress,ethers.toBigInt(tokenId)]
           })
-          //sedn approval transaction
           await sendCreateListingTransaction(approvalTransaction as PreparedTransaction,{
               onSuccess:()=>toast.success('NFT Approved'),
               onError:()=>toast.error('Error approving')
           })
   
-          // const creatAuctionTransaction = 
           const creatAuctionTransaction = prepareContractCall({
               contract: getBidersContractByAddress(biddersContractAddress),
               method:'createAuction',
@@ -102,7 +100,7 @@ function CreateListingPage() {
 
   return (
     <div className='flex flex-col mt-20 justify-center w-full'>
-        <h1 className=' text-3xl font-bold  text-primary-50'>Create Auction</h1>
+        <h1 className=' text-3xl font-bold  text-primary-200'>Create Auction</h1>
         <div className='flex flex-col mt-10 w-1/2 gap-5'>
             
             <Input
@@ -167,7 +165,7 @@ function CreateListingPage() {
             isDisabled = {!activeAcount?.address}
             isLoading={uploading || listingPending}
             onClick={async ()=>await createAuction()}
-            > Create Event</Button>
+            > Create Auction</Button>
 
             
 

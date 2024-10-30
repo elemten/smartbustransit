@@ -19,25 +19,28 @@ const config: Config = {
   plugins: [nextui(
     {
       themes: {
-        dark: {
-          extend: "dark",
+        light: {
+          extend: "light",
           colors: {
-            background: "#1A1920",
+            background: "#ffff",
             white:"#fff",
             primary: {
-              DEFAULT: "#0ab9db",
+              DEFAULT: "#37248f",
                 
 
-  50: '#d9f7ff',
-  100: '#ade6ff',
-  200: '#7fdafb',
-  300: '#50d1f8',
-  400: '#24cbf5',
-  500: '#0ab9db',
-  600: '#0085ab',
-  700: '#00577c',
-  800: '#00304c',
-  900: '#00101c',
+ 
+
+  50: '#edeaff',
+  100: '#ccc1f4',
+  200: '#ac99e7',
+  300: '#8d71dc',
+  400: '#7248d0',
+  500: '#502fb7',
+  600: '#37248f',
+  700: '#211968',
+  800: '#110f40',
+  900: '#04031b',
+
 
             },
             secondary: {

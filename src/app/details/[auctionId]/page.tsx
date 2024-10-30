@@ -8,7 +8,7 @@ import { useActiveAccount, useSendAndConfirmTransaction } from "thirdweb/react";
 import { printCountdown } from "@/utils/countDown";
 import toast from "react-hot-toast";
 
-function page({ params }: { params: { auctionId: string } }) {
+function Page({ params }: { params: { auctionId: string } }) {
   const activeAccount = useActiveAccount();
   const [isLoading, setIsLoading] = React.useState(true);
   const [auction, setAuction] = React.useState<any>();
@@ -122,7 +122,7 @@ function page({ params }: { params: { auctionId: string } }) {
                 }}
               />
             </div>
-            <div className="rightSide flex flex-col gap-5 p-10 text-secondary">
+            <div className="rightSide flex flex-col gap-5 p-10 text-primary-200">
               <h1 className=" text-primary text-2xl font-bold">{auction[0]}</h1>
               <p>
                 {auction[1]}
@@ -165,7 +165,7 @@ function page({ params }: { params: { auctionId: string } }) {
             <>
             <h1 className=" text-danger font-bold text-xl">Auction Ended</h1>
             {
-               activeAccount?.address == auction[6] || activeAccount?.address == auction[3] && !auction[8] ?
+               (activeAccount?.address == auction[6] || activeAccount?.address == auction[3]) && !auction[8] ?
                 <Button color="primary" isLoading={finalizePending} onClick={async ()=>await finalizeAuction() }>Finalize Bid</Button>
                 :
                 ''
@@ -215,7 +215,7 @@ function page({ params }: { params: { auctionId: string } }) {
               {topBids?.map((bid, index) => (
                 <div key={index} className=" flex flex-row w-full justify-between items-center">
                 <Snippet color="primary">{String(bid.bidderAddress)}</Snippet>
-                <p className=" text-secondary">{toTokens(bid.bidAmount,18)} MATIC</p>
+                <p className=" text-primary-200">{toTokens(bid.bidAmount,18)} MATIC</p>
               </div>
               ))
               }
@@ -227,4 +227,4 @@ function page({ params }: { params: { auctionId: string } }) {
   );
 }
 
-export default page;
+export default Page;
