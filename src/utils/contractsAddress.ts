@@ -1,0 +1,1 @@
+export const biddersContractAddress = '0x13eEf50B4883695D874f72C8567Cf2fc93305F69';
