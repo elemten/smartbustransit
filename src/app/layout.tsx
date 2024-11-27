@@ -10,13 +10,6 @@ import  { Toaster } from 'react-hot-toast';
 export const PixelifySans = Pixelify_Sans({ subsets: ["cyrillic"] });
 const orbitron = Orbitron({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-	title: 'My Bids.',
-	description: 'A platform to buy anything on auction.',
-	icons: {
-		icon: "/favicon.ico"
-	}
-};
 
 export default function RootLayout({
   children,
@@ -25,7 +18,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-     
       <body
         className={`${orbitron.className} min-h-screen light bg-white antialiased`}
       >
